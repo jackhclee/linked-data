@@ -1,4 +1,4 @@
-// The module 'vscode' contains the VS Code extensibility API
+C// The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import * as path from 'path';
@@ -114,7 +114,7 @@ function loadRDFOxigraph(data: string, oxiStore: Store, mediaType: string) {
 		try {
 
 			if (mediaType == "application/ld+json") {
-				outputChannel.appendLine("Converting to JSON-LD to NQuads to preserve named graphs");
+				outputChannel.appendLine("Converting JSON-LD to NQuads to preserve named graphs");
 				JSONLDtoNQuads(data)
 					.then(nquads => {
 						oxiStore.load(nquads, "application/n-quads", undefined, undefined);
